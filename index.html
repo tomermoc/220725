@@ -3,138 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הזמנה לתערוכת תקשורת 2025</title>
+    <title>הזמנה להובלת שולחנות עגולים</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Assistant', sans-serif; 
+        body {
+            font-family: 'Assistant', sans-serif;
+            /* Subtle pattern background */
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4dbe7' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-
-        /* Animated background with a network/grid feel */
-        .animated-bg {
-            background-color: #0d1128;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: pan-background 70s linear infinite;
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        @keyframes pan-background {
-            0% { background-position: 0 0; }
-            100% { background-position: 1200px 1200px; }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-
-        /* Animation for elements fading in and sliding up */
-        .fade-in-up {
-            animation: fadeInUp 0.9s ease-out forwards;
-            opacity: 0;
+        .icon-list li {
+            display: flex;
+            align-items: center;
         }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
+        .icon-list .icon-bg {
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            width: 2.5rem; /* 40px */
+            height: 2.5rem; /* 40px */
+            border-radius: 9999px;
+            margin-left: 1rem;
         }
-
-        /* Applying animation delays to stagger the effect */
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        .delay-5 { animation-delay: 1.0s; }
-        .delay-6 { animation-delay: 1.2s; }
-        .delay-7 { animation-delay: 1.4s; } /* New delay for the last element */
-        
-        /* Glowing effect for the main title */
-        .glow-title {
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.7), 0 0 20px rgba(6, 182, 212, 0.5);
+        .btn-gradient {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
-        /* Pulsing animation for the call-to-action button */
-        .pulse-button {
-             box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-             animation: pulse 1.7s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-        
-        /* Gradient border for the card */
-        .card-border {
-            border: 1px solid transparent;
-            background: linear-gradient(#1e293b, #1e293b) padding-box,
-                        linear-gradient(145deg, rgba(0, 191, 255, 0.3), rgba(6, 182, 212, 0.1), rgba(34, 197, 94, 0.3)) border-box;
+        .btn-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
-<body class="animated-bg text-slate-200">
+<body class="antialiased">
 
-    <div class="min-h-screen flex flex-col items-center justify-center p-4">
-
-        <div class="w-full max-w-3xl bg-slate-800/60 backdrop-blur-xl rounded-2xl shadow-2xl p-8 md:p-12 text-center overflow-hidden card-border">
-
-            <!-- Logo -->
-            <img src="https://upload.wikimedia.org/wikipedia/he/thumb/0/0f/MinistryOfCom.png/1200px-MinistryOfCom.png" alt="לוגו משרד התקשורת" class="fade-in-up mx-auto mb-6 h-20">
-
-            <!-- Organizer -->
-            <p class="fade-in-up delay-1 text-lg text-cyan-400 mb-4">
-               משרד התקשורת מתכבד להזמינכם להציג ב:
-            </p>
-
-            <!-- Main Title -->
-            <h1 class="fade-in-up delay-2 text-3xl md:text-5xl font-bold glow-title text-cyan-300">
-                תערוכת יישומים וטכנולוגיות לתשתיות תקשורת מתקדמות
-            </h1>
-
-            <!-- Event Details: Date and Location with Icons -->
-            <div class="fade-in-up delay-3 mt-8 flex flex-col sm:flex-row justify-center items-center gap-x-6 gap-y-2 text-xl text-slate-300">
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
-                    <span>4 בספטמבר 2025</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>חבל התקומה</span>
-                </div>
-            </div>
-
-            <!-- Description -->
-            <p class="fade-in-up delay-4 mt-8 text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-               הצטרפו אלינו להצגת טכנולוגיות חדשניות המבוססות על רשתות הדור ה-5, סיבים אופטיים וטכנולוגיות מתקדמות דומות בתחום תשתיות התקשורת, וקחו חלק בעיצוב העתיד הטכנולוגי של ישראל.
-            </p>
+    <div class="max-w-4xl mx-auto p-4 sm:p-8">
+        <!-- Main Card -->
+        <main class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl ring-1 ring-black ring-opacity-5 overflow-hidden">
             
-            <!-- Target Audience Section -->
-            <div class="fade-in-up delay-5 mt-10 text-center max-w-2xl mx-auto border-t border-white/10 pt-8">
-                <h2 class="text-xl font-bold text-cyan-300">מי מוזמן להציג?</h2>
-                <p class="mt-3 text-slate-400">אנו מזמינים חברות, עמותות ומוסדות להגיש הצעה להציג פתרונות ופיתוחים בתחומים הבאים:</p>
-                <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-slate-300">
-                    <li class="flex items-center justify-center sm:justify-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-green-400"><polyline points="20 6 9 17 4 12"></polyline></svg><span>חברות טכנולוגיה עם יישומים על תשתיות מתקדמות</span></li>
-                    <li class="flex items-center justify-center sm:justify-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-green-400"><polyline points="20 6 9 17 4 12"></polyline></svg><span>ספקיות תקשורת עם תשתיות מתקדמות</span></li>
-                    <li class="flex items-center justify-center sm:justify-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-green-400"><polyline points="20 6 9 17 4 12"></polyline></svg><span>פתרונות לצמצום פערים דיגיטליים</span></li>
-                    <li class="flex items-center justify-center sm:justify-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block text-green-400"><polyline points="20 6 9 17 4 12"></polyline></svg><span>מוסדות אקדמיים עם פיתוחים רלוונטיים</span></li>
-                </ul>
-            </div>
+            <!-- Header -->
+            <header class="text-center pt-10 pb-8 px-6 bg-slate-50 border-b border-slate-200">
+                <div class="mb-5">
+                    <img src="https://upload.wikimedia.org/wikipedia/he/thumb/0/0f/MinistryOfCom.png/1200px-MinistryOfCom.png" 
+                         alt="לוגו משרד התקשורת" 
+                         class="h-20 sm:h-24 w-auto mx-auto"
+                         onerror="this.onerror=null; this.src='https://placehold.co/200x100/e2e8f0/e2e8f0?text=Logo';">
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">הזמנה להובלת שולחנות עגולים</h1>
+                <p class="mt-4 text-lg text-slate-600">יום תכניות עבודה | 22 ביולי</p>
+            </header>
 
-            <!-- Call to Action Button -->
-            <div class="fade-in-up delay-6 mt-12">
-                <a href="https://forms.monday.com/forms/a8e89ab15f8f12f7a5fa772ae8d97292?r=euc1"
-                   target="_blank" rel="noopener noreferrer" 
-                   class="pulse-button inline-block bg-green-600 hover:bg-green-500 text-white font-bold text-lg py-4 px-10 rounded-lg transition-transform transform hover:scale-105">
-                    הגשת הצעה להצגה בתערוכה
-                </a>
+            <div class="p-8 md:p-12">
+                <p class="text-xl text-slate-700 leading-relaxed mb-12 text-center max-w-3xl mx-auto">
+                    במסגרת יום תכניות העבודה המשרדי, אנו מתכננים לקיים שולחנות עגולים מגוונים ומעשירים. זוהי הזדמנות נפלאה לחלוק, ללמוד ולהתחבר כקהילה מקצועית. אם יש לכם משהו מעניין לחלוק עם הקולגות, אנו מזמינים אתכם להציע את עצמכם להובלת שולחן עגול.
+                </p>
+
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-10">מה תוכלו להציג ולשתף?</h2>
+
+                <!-- Content Categories Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Professional Content -->
+                    <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-900/5 card-hover overflow-hidden">
+                        <div class="border-b-4 border-blue-500 pb-4 mb-4">
+                            <h3 class="font-bold text-2xl text-slate-800">תכנים מקצועיים</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-600 icon-list text-lg">
+                            <li>
+                                <div class="icon-bg bg-blue-100 text-blue-600">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-3.75-2.25M21 18l-3.75-2.25" /></svg>
+                                </div>
+                                <span>הצלחות וכישלונות מהעבודה השוטפת</span>
+                            </li>
+                            <li>
+                                <div class="icon-bg bg-blue-100 text-blue-600">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <span>פרויקטים מיוחדים שביצעתם (גם מחוץ למשרד)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Personal Content -->
+                    <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-900/5 card-hover overflow-hidden">
+                        <div class="border-b-4 border-teal-500 pb-4 mb-4">
+                             <h3 class="font-bold text-2xl text-slate-800">תכנים אישיים</h3>
+                        </div>
+                        <ul class="space-y-4 text-slate-600 icon-list text-lg">
+                            <li>
+                                <div class="icon-bg bg-teal-100 text-teal-600">
+                                   <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /></svg>
+                                </div>
+                               <span>תחביבים ועניינים אישיים שניתן לחבר לסביבה</span>
+                            </li>
+                            <li>
+                                <div class="icon-bg bg-teal-100 text-teal-600">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56v4.82a6 6 0 01-1.24 3.63m0-11.23a6 6 0 015.29 9.34m-10.58 0a6 6 0 01-5.29-9.34m0 0a6 6 0 0110.58 0" /></svg>
+                                </div>
+                                <span>כישורים ייחודיים שפיתחתם או חוויות מעשירות</span>
+                            </li>
+                             <li>
+                                <div class="icon-bg bg-teal-100 text-teal-600">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l-3.736 3.736m19.218-3.736l3.736 3.736" /></svg>
+                                </div>
+                               <span>תכניות העשרה בהם השתתפתם - רשמיות או פרטיות</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Budget Incentive -->
+                <div class="bg-amber-100/50 border border-amber-200 text-amber-900 p-5 rounded-2xl mb-12 flex items-start gap-4" role="alert">
+                    <div class="flex-shrink-0">
+                        <svg class="w-7 h-7 text-amber-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A.75.75 0 0010 12.5a.75.75 0 00.75-.75v-.614a.75.75 0 00-1.5 0v.514l.23-1.036a.25.25 0 01.244-.204H11a.75.75 0 000-1.5H9z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <div>
+                         <p class="font-bold">שימו לב!</p>
+                         <p class="mt-1">עבור כל מציג/ה יוקצה תקציב <strong class="font-semibold text-amber-950">מצומצם</strong> לרכישת חומרים והכנת אלמנטים ויזואליים ואינטראקטיביים שיעשירו את המפגש.</p>
+                    </div>
+                </div>
+                
+                <!-- Registration -->
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-6">רוצים להציע רעיון?</h2>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
+                        <!-- Digital Form Button -->
+                        <a href="https://app---cf83ebf9.base44.app/SubmitIdea" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center w-full sm:w-auto from-slate-700 to-slate-800 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg btn-gradient">
+                            <span>לחצו כאן להרשמה</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-             
-             <!-- Submission Deadline -->
-            <p class="fade-in-up delay-7 mt-5 text-sm text-slate-400">
-                מועד אחרון להגשה: יום חמישי, 10 ביולי 2025
-            </p>
-        </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-8 pb-4">
+            <p class="text-slate-500">מחכים לשמוע על הרעיונות המגוונים והמעניינים שלכם!</p>
+        </footer>
     </div>
 
 </body>
